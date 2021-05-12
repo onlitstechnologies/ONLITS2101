@@ -1,4 +1,4 @@
-				/*BUBBLE SORT*/
+				/*SELECTION SORT*/
 
 #include<stdio.h>
 #define SIZE 5		//Symbolic Constant
@@ -14,14 +14,14 @@ int main()
 	
 	for(i=0; i<SIZE-1; i++)		//Sorting logic
 	{
-		for(j=0; j<SIZE-1; j++)
+		for(j=i+1; j<SIZE; j++)
 		{
-			if(no[j]>no[j+1])
+			if(no[i]>no[j])
 			{
 				//swapping
-				t = no[j];
-				no[j] = no[j+1];
-				no[j+1] = t;
+				t = no[i];
+				no[i] = no[j];
+				no[j] = t;
 			}
 		}
 	}
