@@ -1,3 +1,4 @@
+/* Program to find the length of a string using library function strlen() */
 #include<stdio.h>
 #include<string.h>
 int main()

@@ -10,3 +10,8 @@ long long power(long long n, long long m)
 	
 	return p;		//returns answer
 }
+
+float pi()
+{
+	return 22.0F/7.0F;
+}

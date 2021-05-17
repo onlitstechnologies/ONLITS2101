@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include "MyLib.c"
-#define PI 3.14		//Declare Constant
+//#define PI 3.14		//Declare Constant
 int main()
 {
-	int r, a;
+	float r, a;
 	printf("Enter radius: ");
-	scanf("%d", &r);
+	scanf("%f", &r);
 	
-	a = PI * power(r, 2);
+	a = pi() * power(r, 2);		//here pi() is category 4 of function
 	
-	printf("The area is %d.\n", a);
+	printf("The area is %f sq. units.\n", a);
 	
 	return 0;
 }
