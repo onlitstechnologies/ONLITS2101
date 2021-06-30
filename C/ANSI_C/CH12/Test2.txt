@@ -1,1 +1,2 @@
 C was developed by Dennis Ritche in 1972.
+C++ was developed by BJarne Stroustrup in 1983.

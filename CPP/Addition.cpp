@@ -14,6 +14,7 @@ int main()
 
 /*
 	.c				-->		.cpp
+	stdio.h			-->		iostream
 	printf()		-->		cout
 	scanf()			-->		cin
 */
