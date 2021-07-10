@@ -6,7 +6,7 @@ int main()
     printf("Enter the size of array: ");
     scanf("%d", &n);
 
-    arr = malloc(n * sizeof(int));
+    arr = calloc(n, sizeof(int));
 
      //---Display empty array----
     printf("\nThe elements of array are as follows:\n");
@@ -31,18 +31,3 @@ int main()
     free(arr);
     return 0;
 }
-
-
-
-
-/*
-    GCC/MinGW
-        int -   4 bytes (32 bits)
-        char -  1 byte
-        float - 4 bytes
-    
-    Turbo c++
-        int -   2 bytes
-        float - 4 bytes
-        char -  1 byte
-*/
