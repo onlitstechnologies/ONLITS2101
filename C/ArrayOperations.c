@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 10
+#define MAX 100
 
 void insert_end(int arr[], int *size);
 void insert_at(int arr[], int *size, int in);
 void delete_end(int arr[], int *size);
-void delete_at(int arr[], int size, int in);
+void delete_at(int arr[], int *size, int in);
 void display(int arr[], int *size);
 
 int main()
 {
-    int arr[MAX];
+    int arr[MAX];                             //static allocation
+    //int *arr = malloc(MAX * sizeof(int));   //dynamic allocation
     int size = 0, ch, in;
 
     while (1)
@@ -19,6 +20,7 @@ int main()
         printf("1. Insert at the end\n");
         printf("2. Insert at a particular index\n");
         printf("3. Delete from the end\n");
+        printf("4. Delete at a particular index\n");
         printf("5. Display array\n");
         printf("6. Exit\n");
         printf("Enter your choice: ");
@@ -35,6 +37,11 @@ int main()
             break;
         case 3:
             delete_end(arr, &size);
+            break;
+        case 4:
+            printf("\nEnter index: ");
+            scanf("%d", &in);
+            delete_at(arr, &size, in);
             break;
         case 5:
             display(arr, &size);
@@ -79,6 +86,17 @@ void delete_end(int arr[], int *size)
         (*size)--;
         printf("\nItem at index %d deleted!\n\n", *size);
     }
+}
+
+void delete_at(int arr[], int *size, int in)
+{
+    int i;
+    for(i=in; i<*size; i++)
+    {
+        arr[i] = arr[i+1];
+    }
+    (*size)--;
+    printf("\nItem at index %d deleted!\n\n", in);
 }
 
 void display(int arr[], int *size)
