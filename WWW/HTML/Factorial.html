@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Factorial Program</title>
+    </head>
+    <body>
+        <h1>Factorial Program</h1>
+        <form>
+            <label for="number">Number</label>
+            <input type="text" name="number" id="number"> <br> <br>
+            <label for="factorial">Factorial</label>
+            <output id="factorial"></output> <br> <br>
+            <button type="button" onclick="calculateFactorial()">Calculate</button>
+        </form>
+        <script>
+            function calculateFactorial() {
+                let f = 1;
+                n = document.getElementById("number").value;
+                for(i=n; i>=1; i--) {
+                    f = f * i;
+                }
+                document.getElementById("factorial").value = f;
+            }
+        </script>
+    </body>
+</html>

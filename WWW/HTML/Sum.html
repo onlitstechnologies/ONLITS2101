@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sum Calculator</title>
+    </head>
+    <body>
+        <h1>Sum Calculator</h1>
+        <form>
+            <label for="first_number">First Number</label>
+            <input type="text" name="first_number" id="first_number"> <br> <br>
+            <label for="second_number">Second Number</label>
+            <input type="text" name="second_number" id="second_number"> <br> <br>
+            <label for="sum">Sum</label> &nbsp;
+            <output id="sum"></output> <br> <br>
+            <button type="button" onclick="calculateSum()">Calculate</button>
+        </form>
+        <script>
+            function calculateSum() {
+                a = Number(document.getElementById("first_number").value);
+                b = Number(document.getElementById("second_number").value);
+                c = a + b;
+                document.getElementById("sum").value = c;
+            }
+        </script>
+    </body>
+</html>
