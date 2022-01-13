@@ -6,7 +6,7 @@ int main()
     int arr[MAX], size = 0, value, index, i;
     char ch;
 
-    while (1)
+    while (1)           //O(n)
     {
         printf("Enter the value to insert: ");
         scanf("%d", &value);
