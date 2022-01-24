@@ -32,7 +32,6 @@ int main()
             break;
         case 1:
             display_list();
-            printf("\n\nFirst contains %p.\n\n", first);
             break;
         case 2:
             insert_node();
@@ -46,21 +45,42 @@ int main()
 
 void insert_node()
 {
+    int data;
     NODE *current;
-    current = malloc(sizeof(NODE));
-    current->info = 10;
-    current->next = malloc(sizeof(NODE));
-    if(first == NULL)
+    printf("Enter an integer: ");
+    scanf("%d", &data);
+    if (first == NULL)      //Code for inserting first node
+    {
+        current = malloc(sizeof(NODE));
+        current->info = data;
+        current->next = NULL;
         first = current;
+    }
+    else                   //Code for inserting other nodes
+    {
+        current = first;
+        while(1)
+        {
+            if(current->next==NULL)
+                break;
+            
+            current = current->next;
+        }
+        current->next = malloc(sizeof(NODE));
+        current->next->info = data;
+        current->next->next = NULL;
+    }
+
     printf("\n\nNode Inserted!\n\n");
 }
 
 void display_list()
 {
     NODE *current = first;
+    printf("\n\n");
     if (first == NULL)
     {
-        printf("\n\nThe list is empty!\n\n");
+        printf("The list is empty!");
     }
     else
     {
@@ -75,4 +95,6 @@ void display_list()
             current = current->next;
         }
     }
+
+    printf("\n\n");
 }
