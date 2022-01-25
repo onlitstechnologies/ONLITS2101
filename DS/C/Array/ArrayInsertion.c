@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define MAX 10
 void display(int arr[], int size);
 int main()
@@ -36,13 +35,4 @@ int main()
         }
     }
     return 0;
-}
-
-void display(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-    {
-        printf("%d\n", arr[i]);
-    }
 }
