@@ -10,6 +10,7 @@ struct node
 typedef struct node NODE;
 
 void insert_node();
+void delete_node();
 void display_list();
 NODE *first = NULL;
 int main()
@@ -21,8 +22,8 @@ int main()
         printf("Main Menu\n");
         printf("1. Display List\n");
         printf("2. Insert Node\n");
-        printf("0. Exit\n");
-        printf("Enter choice: ");
+        printf("3. Delete Node\n");
+        printf("Enter choice (0 to exit): ");
         scanf("%d", &ch);
         switch (ch)
         {
@@ -35,6 +36,9 @@ int main()
             break;
         case 2:
             insert_node();
+            break;
+        case 3:
+            delete_node();
             break;
         default:
             printf("\n\nInvalid Option!\n\n");
@@ -49,21 +53,21 @@ void insert_node()
     NODE *current;
     printf("Enter an integer: ");
     scanf("%d", &data);
-    if (first == NULL)      //Code for inserting first node
+    if (first == NULL) //Code for inserting first node
     {
         current = malloc(sizeof(NODE));
         current->info = data;
         current->next = NULL;
         first = current;
     }
-    else                   //Code for inserting other nodes
+    else //Code for inserting other nodes
     {
         current = first;
-        while(1)
+        while (1)
         {
-            if(current->next==NULL)
+            if (current->next == NULL)
                 break;
-            
+
             current = current->next;
         }
         current->next = malloc(sizeof(NODE));
@@ -72,6 +76,36 @@ void insert_node()
     }
 
     printf("\n\nNode Inserted!\n\n");
+}
+
+void delete_node()
+{
+    NODE *current;
+    if (first == NULL)
+    {
+        printf("\n\nThe list is empty!\n\n");
+    }
+    else
+    {
+        current = first;
+        while (1)
+        {
+            if(current->next==NULL)
+            {
+                first=NULL;
+                printf("\n\nNode deleted! List is Empty Now!\n\n");
+                break;
+            }
+            
+            else if (current->next->next == NULL)
+            {
+                current->next = NULL;
+                printf("\n\nNode deleted!\n\n");
+                break;
+            }
+            current = current->next;
+        }
+    }
 }
 
 void display_list()
