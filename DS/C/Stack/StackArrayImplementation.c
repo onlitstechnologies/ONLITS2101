@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 10
+#define SIZE 5
 
 void push(int stack[], int *size);
 void pop(int stack[], int *size);
@@ -41,23 +41,43 @@ int main()
 
 void push(int stack[], int *size)
 {
-    int i;
-    printf("Enter a number: ");
-    if (*size > 0)
+    if (*size > SIZE)
     {
-        for (i = *size; i > 0; i--)
-        {
-            stack[i] = stack[i - 1];
-        }
+        printf("\nStack is full, cannot continue.\n\n");
     }
-    scanf("%d", &stack[0]);
-    (*size)++;
-    printf("\nValue pushed.\n\n");
+    else
+    {
+        int i;
+        printf("Enter a number: ");
+        if (*size > 0)
+        {
+            for (i = *size; i > 0; i--)
+            {
+                stack[i] = stack[i - 1];
+            }
+        }
+        scanf("%d", &stack[0]);
+        (*size)++;
+        printf("\nValue pushed.\n\n");
+    }
 }
 
 void pop(int stack[], int *size)
 {
-    
+    int i;
+    if (*size > 0)
+    {
+        for (i = 1; i < *size; i++)
+        {
+            stack[i - 1] = stack[i];
+        }
+        printf("\nValue popped.\n\n");
+        (*size)--;
+    }
+    else
+    {
+        printf("\nStack empty, nothing to pop.\n\n");
+    }
 }
 
 void print_stack(int stack[], int *size)
