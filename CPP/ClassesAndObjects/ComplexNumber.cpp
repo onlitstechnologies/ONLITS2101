@@ -3,7 +3,7 @@ using namespace std;
 
 class complex
 {
-private:                 //violating encapsulation
+private:            
     float real;
     float imaginary;
 public:
@@ -22,6 +22,7 @@ public:
         t.imaginary = imaginary + c.imaginary;
         return t;
     }
+
     void putdata()
     {
         cout <<"real: " << real <<", imaginary: " << imaginary << endl;
@@ -30,7 +31,8 @@ public:
 
 int main()
 {
-    complex c1, c2, c3;     //here c1, c2, c3
+    complex c1, c2, c3;     //Static creation of object
+    complex *cn = new complex();    //Dynamic creation of object
     cout << "Enter a complex number: " <<endl;
     c1.getdata();
     cout << "Enter another complex number: " << endl;
