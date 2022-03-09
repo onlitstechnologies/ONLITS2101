@@ -26,28 +26,42 @@ void bank_account :: init()
 void bank_account :: deposit()
 {
     float amount;
-    cout <<"\nEnter amount: ";
+    cout <<"\nEnter amount to deposit: ";
     cin >> amount;
+    balance += amount;
 }
 
 void bank_account :: withdraw()
 {
-
-
+    float amount;
+    cout << "\nEnter amount to withdraw: ";
+    cin >> amount;
+    if(amount<=balance)
+        balance -= amount;
+    else
+        cout << "Transaction declined - insufficient balance" << endl;
 }
 
 void bank_account :: display_balance()
 {
-    cout<<"\nName: " << depositor << endl;
+    cout<<"Name: " << depositor << endl;
     cout<<"Balance: " << balance << endl;
 }
 
 int main()
 {
     bank_account bacc;
+    cout << "Initial balance: " << endl;
     bacc.init();
     bacc.display_balance();
+    
     bacc.deposit();
+    cout << "Balance after deposit: " << endl;
     bacc.display_balance();
+
+    bacc.withdraw();
+    cout << "Balance after withdrawal: " << endl;
+    bacc.display_balance();
+
     return 0;
 }
