@@ -41,7 +41,7 @@ int main()
 
 void push(int stack[], int *size)
 {
-    if (*size > SIZE)
+    if (*size > SIZE)           //Handling overflow condition
     {
         printf("\nStack is full, cannot continue.\n\n");
     }

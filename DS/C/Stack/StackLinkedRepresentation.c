@@ -90,7 +90,7 @@ void push()
 
 void pop()
 {
-    if(top == NULL)
+    if(top == NULL)     //Handling underflow condition
     {
         printf("\nStack is empty, nothing to pop\n\n");
         return ;
