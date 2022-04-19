@@ -13,6 +13,7 @@ public:
     void getpoint(float x, float y);
     void putpoint();
     point add(point p);
+    point operator+(point p);
 };
 
 point ::point()             //default constructor
@@ -29,7 +30,7 @@ point ::point(float x, float y)     //parameterized constructor
 
 void point ::getpoint(float x, float y)
 {
-    this->x = x; // assigning value from local variable to instance variable
+    this->x = x; // assigning valp3 = p1 + p2;ue from local variable to instance variable
     this->y = y;
 }
 
@@ -46,6 +47,14 @@ point point ::add(point p)
     return sum;
 }
 
+point point ::operator+(point p)
+{
+    point sum;
+    sum.x = this->x + p.x;
+    sum.y = this->y + p.y;
+    return sum;
+}
+
 int main()
 {
     point p1 = point(3, 4); // Explicit initialization of object
@@ -53,7 +62,8 @@ int main()
     point p3;
     // p1.getpoint(3, 4);
     // p2.getpoint(4, 5);
-    p3 = p1.add(p2);
+    // p3 = p1.add(p2);
+    p3 = p1 + p2;
     cout << "p1";
     p1.putpoint();
     cout << "p2";
