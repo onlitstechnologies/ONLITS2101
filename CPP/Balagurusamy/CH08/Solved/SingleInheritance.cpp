@@ -5,7 +5,7 @@ using namespace std;
 class B
 {
     int a; // private; not inheritable
-public:
+public:    // public; ready for inheritance
     int b;
     void get_ab();
     int get_a(void);
@@ -27,21 +27,27 @@ void B::get_ab(void)
     b = 10;
 }
 
+int B ::get_a()
+{
+    return a;
+}
+
 void B::show_a(void)
 {
     cout << "a = " << a << endl;
 }
 
-void D :: mul()
+void D::mul()
 {
     c = b * get_a();
 }
 
-void D :: display()
+void D ::display()
 {
     cout << "a = " << get_a() << endl;
     cout << "b = " << b << endl;
-    cout << "c =" << c << endl << endl;
+    cout << "c =" << c << endl
+         << endl;
 }
 
 int main()
@@ -57,5 +63,4 @@ int main()
     d.display();
 
     return 0;
-
 }
