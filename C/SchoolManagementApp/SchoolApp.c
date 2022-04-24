@@ -75,6 +75,7 @@ void new_admission()
 
 void edit_admission()
 {
+    
 }
 
 void admission_list()
