@@ -1,0 +1,19 @@
+header {
+    min-height: 100px;
+}
+
+nav {
+    background-color: blueviolet;
+    padding: 5px;
+    color: white;
+}
+
+main {
+    min-height: 500px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
