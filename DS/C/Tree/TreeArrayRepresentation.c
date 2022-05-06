@@ -1,28 +1,60 @@
 #include <stdio.h>
-#include <math.h>
+
+void set_left_child(char data, int i);
+void set_right_child(char data, int i);
+void print_tree();
 
 #define MAX 7
+int tree[MAX];
 
 int main()
 {
-    int tree[MAX];
+    //--initializing root
+    tree[0] = 'A';
 
-    for (int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < pow(2,i); j++)
-        {
-            printf("value of j: %d\n", 2*i+1);
-            printf("Enter a value: ");
-            scanf("%d", &tree[2*i+1]);
-        }
-    }
+    set_left_child('B', 0);
+    set_right_child('C', 0);
+    set_left_child('D', 1);
+    set_right_child('E', 1);
+    set_left_child('F', 2);
+    set_right_child('G', 2);
 
-    for (int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < pow(2,i); j++)
-        {
-            printf("%d\n", tree[j]);
-        }
-    }
+    print_tree();
     return 0;
+}
+
+void set_left_child(char data, int i)
+{
+    if(tree[i] == '\0')
+    {
+        printf("No parent found");
+    }
+    else
+    {
+        tree[(2 * i) + 1] = data;
+    }
+}
+
+void set_right_child(char data, int i)
+{
+    if(tree[i] == '\0')
+    {
+        printf("No parent found");
+    }
+    else
+    {
+        tree[(2 * i) + 2] = data;
+    }
+}
+
+void print_tree()
+{
+    for(int i=0; i<MAX; i++)
+    {
+        if(tree[i] != '\0')
+        {
+            printf("%c", tree[i]);
+        }
+    }
+    printf("\n");
 }
