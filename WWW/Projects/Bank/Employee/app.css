@@ -7,6 +7,25 @@
     border: 1px solid darkgrey;
 }
 
+header {
+    min-height: 100px;
+}
+
+nav {
+    background-color: blueviolet;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: brown;
+}
+
 main {
     min-height: 300px;
 }
@@ -19,6 +38,7 @@ main {
 }
 
 footer {
+    min-height: 200px;
     background-color: black;
     color: white;
 }
