@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Oriented Programming using C++</title>
     <style>
+        .container {
+            /* float: left; */
+        }
+
         .center {
             text-align: center;
         }
@@ -24,58 +29,73 @@
             padding-top: 10px;
             padding-bottom: 10px;
             float: left;
+            margin-right: 20px;
         }
-        
+
         .main-content {
-            padding: 10px;
             text-align: justify;
         }
 
         .topic-heading {
             border-bottom: 2px solid blue;
             border-left: 2px solid blue;
+            width: 200px;
+            font-size: 14pt;
+            font-weight: bold;
         }
 
+        .image-template {
+            width: 400px;
+            height: 300px;
+            border: 2px solid blue;
+            padding: 5px;
+        }
     </style>
 </head>
+
 <body>
     <div>
         <h1 class="center">1</h1>
         <h1 class="center border-2">Principles of Object-Oriented Programming</h1>
     </div>
-    <div class="key-concept-box">
-        <h2 class="center">Key Concept</h2>
-        <ul>
-            <li>Software evolution</li>
-            <li>Procedure-oriented programming</li>
-            <li>Object-oriented programming</li>
-            <li>Objects</li>
-            <li>Classes</li>
-            <li>Data abstraction</li>
-            <li>Encapsulation</li>
-            <li>Inheritance</li>
-            <li>Polymorphism</li>
-            <li>Dynamic binding</li>
-            <li>Message passing</li>
-            <li>Object-oriented languages</li>
-            <li>Object-based languages</li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <h2 class="topic-heading">1.1 Software Crisis</h2>
-        <p>Developments in software technology continue to be dynamic. New tools and techniques
-            are announced in quick succession. This has forced the software engineers and industry
-            to continuously look for new approaches to software design and development, and they
-            are becoming more and more critical in view of the increasing complexity of software
-            systems as well as the highly competitive nature of the industry. These rapid advances
-            appear to have created a situation of crisis within the industry. The following issues
-            need to be addressed to face this crisis:
-        </p>
-        <ul>
-            <li>How to represent real-life entities of problems in system design? </li>
-            <li>How to design systems with open interfaces?</li>
-            <li>How to ensure reusability and extensibility of modules?</li>
-        </ul>
-    </div>
+    <div class="container">
+        <div class="key-concept-box">
+            <h2 class="center">Key Concept</h2>
+            <ul>
+                <li>Software evolution</li>
+                <li>Procedure-oriented programming</li>
+                <li>Object-oriented programming</li>
+                <li>Objects</li>
+                <li>Classes</li>
+                <li>Data abstraction</li>
+                <li>Encapsulation</li>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Dynamic binding</li>
+                <li>Message passing</li>
+                <li>Object-oriented languages</li>
+                <li>Object-based languages</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <span class="topic-heading">1.1 Software Crisis</span>
+            <p>Developments in software technology continue to be dynamic. New tools and techniques
+                are announced in quick succession. This has forced the software engineers and industry
+                to continuously look for new approaches to software design and development, and they
+                are becoming more and more critical in view of the increasing complexity of software
+                systems as well as the highly competitive nature of the industry. These rapid advances
+                appear to have created a situation of crisis within the industry. The following issues
+                need to be addressed to face this crisis:
+            </p>
+            <ul>
+                <li>How to represent real-life entities of problems in system design? </li>
+                <li>How to design systems with open interfaces?</li>
+                <li>How to ensure reusability and extensibility of modules?</li>
+            </ul>
+        </div>
+        <div>
+            <img class="image-template" src="./images/programming-paradigms.png" alt="programming-paradigms.png">
+        </div>
 </body>
+
 </html>
